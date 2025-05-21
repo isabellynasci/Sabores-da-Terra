@@ -1,143 +1,186 @@
-/* Reset e base */
-* {
-  box-sizing: border-box;
+/* Fontes e Tipografia */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Roboto:wght@400&display=swap');
+
+/* ============================
+   Estilo Global
+============================ */
+body {
+  font-family: 'Roboto', sans-serif;
+  background-color: #f5f5f5;
+  color: #3e2723;
   margin: 0;
   padding: 0;
-  font-family: Arial, sans-serif;
-}
-
-body {
-  background-color: #fffdf5;
-  color: #333;
   line-height: 1.6;
 }
 
-/* Cabeçalho */
+/* ============================
+   Header
+============================ */
 header {
-  background-color: #8c4c2f;
-  color: white;
-  padding: 1rem 2rem;
+  background-color: #f6ebd4;
+  padding: 20px;
   display: flex;
-  align-items: center;
   justify-content: space-between;
-  flex-wrap: wrap;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  z-index: 10;
 }
 
 header img {
-  height: 50px;
+  height: 60px;
 }
 
 nav a {
-  color: white;
-  margin: 0 1rem;
+  color: #3e2723;
+  margin-left: 1.5rem;
   text-decoration: none;
   font-weight: bold;
+  text-transform: uppercase;
+  font-size: 1.1rem;
   transition: color 0.3s ease;
 }
 
 nav a:hover {
-  color: #ffd5b5;
+  color: #8d6e63;
+  text-decoration: underline;
 }
 
-/* Carrossel */
+/* ============================
+   Carrossel
+============================ */
 .carousel {
-  position: relative;
-  max-width: 100%;
-  overflow: hidden;
-  margin: 20px 0;
-}
-
-.slides {
-  display: flex;
-  transition: transform 0.5s ease-in-out;
-}
-
-.slides img {
   width: 100%;
-  flex-shrink: 0;
-  height: 300px;
+  height: 70vh;
+  overflow: hidden;
+  position: relative;
+  background-color: #000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.carousel-container {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.carousel-slide {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transition: opacity 1s ease-in-out;
+}
+
+.carousel-slide.active {
+  opacity: 1;
+  position: relative;
+  z-index: 1;
+}
+
+/* ============================
+   Seções Gerais
+============================ */
+.section {
+  padding: 4rem 2rem;
+  text-align: center;
+  margin: 0 auto;
+  max-width: 1200px;
+}
+
+.section h2 {
+  font-family: 'Playfair Display', serif;
+  font-weight: 700;
+  font-size: 2.5rem;
+  color: #3e2723;
+  margin-bottom: 1.5rem;
+  text-transform: uppercase;
+}
+
+.section p {
+  font-size: 1.2rem;
+  color: #5d4037;
+  margin-bottom: 2rem;
+  font-weight: 300;
+}
+
+.section img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.section img:hover {
+  transform: scale(1.05);
+}
+
+/* ============================
+   Imagens Específicas
+============================ */
+.promo-image,
+.aniversario-image,
+.delivery-image {
+  max-height: 400px;
   object-fit: cover;
 }
 
-/* Formulário de reserva */
-.form-section {
-  background-color: #fff3e0;
-  padding: 2rem;
-  max-width: 600px;
-  margin: auto;
-  border-radius: 8px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
-
-.form-section h2 {
-  margin-bottom: 1rem;
-  text-align: center;
-  color: #8c4c2f;
-}
-
-form label {
-  display: block;
-  margin-top: 1rem;
-  font-weight: bold;
-}
-
-form input,
-form select {
-  width: 100%;
-  padding: 0.5rem;
-  margin-top: 0.3rem;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-}
-
-form button {
-  margin-top: 1rem;
-  padding: 0.7rem;
-  background-color: #8c4c2f;
-  color: white;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-}
-
-form button:hover {
-  background-color: #a35634;
-}
-
-/* Rodapé */
+/* ============================
+   Footer
+============================ */
 footer {
-  background-color: #8c4c2f;
-  color: white;
+  background-color: #3e2723;
+  color: #fff;
   text-align: center;
-  padding: 1rem;
-  margin-top: 2rem;
+  padding: 1.5rem;
+  font-size: 1rem;
 }
 
-/* Responsividade */
+footer p {
+  margin: 0;
+}
+
+/* ============================
+   Animações
+============================ */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* ============================
+   Responsividade
+============================ */
 @media (max-width: 768px) {
-  header {
-    flex-direction: column;
-    align-items: flex-start;
+  .carousel {
+    height: 50vh;
   }
 
-  nav {
-    margin-top: 1rem;
+  .section h2 {
+    font-size: 2rem;
   }
 
-  .slides img {
-    height: 200px;
+  .section p {
+    font-size: 1rem;
   }
-  form textarea {
-  width: 100%;
-  padding: 0.5rem;
-  margin-top: 0.3rem;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  resize: vertical;
-}
 
-}
-html {
-  scroll-behavior: smooth;
+  .section img {
+    max-height: 300px;
+  }
+
+  nav a {
+    font-size: 1rem;
+    margin-left: 1rem;
+  }
 }

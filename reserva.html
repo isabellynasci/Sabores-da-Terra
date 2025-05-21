@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Reservar - Sabores da Terra</title>
+  <link rel="stylesheet" href="reserva.css">
+</head>
+<body>
+
+  <header>
+    <img src="./img/Captura de tela 2025-05-16 140137.png" alt="Logo Sabores da Terra" id="logo" />
+    <nav>
+      <a href="index.html">Início</a>
+      <a href="cardapio.html">Cardápio</a>
+      <a href="reserva.html">Reservas</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="form-section" id="reserva">
+      <h2>Reserve sua mesa</h2>
+      <form id="formReserva">
+        <label for="nome">Nome completo:</label>
+        <input type="text" id="nome" required>
+
+        <label for="telefone">Telefone:</label>
+        <input type="tel" id="telefone" required>
+
+        <label for="data">Data:</label>
+        <input type="date" id="data" required>
+
+        <label for="hora">Hora:</label>
+        <input type="time" id="hora" required>
+
+        <label for="pessoas">Número de pessoas:</label>
+        <select id="pessoas" required>
+          <option value="">Selecione</option>
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3-4">3-4</option>
+          <option value="5+">5 ou mais</option>
+        </select>
+
+        <label for="mesa">Tipo de mesa:</label>
+        <select id="mesa" required>
+          <option value="">Selecione</option>
+          <option value="interna">Interna</option>
+          <option value="externa">Externa</option>
+        </select>
+
+        <label for="ocasiao">Ocasião especial:</label>
+        <input type="text" id="ocasiao" placeholder="Ex: Aniversário, encontro...">
+
+        <label for="preferencia">Preferência alimentar:</label>
+        <select id="preferencia">
+          <option value="">Nenhuma</option>
+          <option value="vegetariano">Vegetariano</option>
+          <option value="vegano">Vegano</option>
+          <option value="sem-gluten">Sem glúten</option>
+          <option value="outra">Outra</option>
+        </select>
+
+        <label for="observacoes">Observações adicionais:</label>
+        <textarea id="observacoes" rows="3" placeholder="Ex: cadeira para criança, alergias..."></textarea>
+
+        <label for="satisfacao">Nível de Satisfação:</label>
+        <input type="range" id="satisfacao" name="satisfacao" min="0" max="10" step="1">
+
+        <button type="submit">Reservar</button>
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Sabores da Terra - Todos os direitos reservados.</p>
+  </footer>
+
+  <script>
+    // Interação com o formulário
+    document.getElementById("formReserva").addEventListener("submit", function(e) {
+      e.preventDefault();
+      const nome = document.getElementById("nome").value;
+      alert(`Reserva realizada com sucesso, ${nome}!`);
+      this.reset();
+    });
+  </script>
+
+</body>
+</html>

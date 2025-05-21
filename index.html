@@ -4,112 +4,75 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Sabores da Terra</title>
-  <link rel="stylesheet" href="./style.css">
+  <link rel="stylesheet" href="./style.css" />
 </head>
 <body>
 
+  <!-- Cabeçalho -->
   <header>
     <img src="./img/Captura de tela 2025-05-16 140137.png" alt="Logo Sabores da Terra" id="logo" />
-    <nav>
+    <nav aria-label="Menu principal">
+      <a href="./index.html">Início</a>
       <a href="./cardapio.html">Cardápio</a>
-      <a href="#reserva">Reservas</a>
-   
+      <a href="./reserva.html">Reservas</a>
     </nav>
   </header>
 
+  <!-- Conteúdo Principal -->
   <main>
-    <!-- Carrossel de Comidas -->
+
+    <!-- Carrossel de Pratos -->
     <section class="carousel" id="cardapio">
-      <div class="slides" id="carouselSlides">
-        <img src="https://images.unsplash.com/photo-1600891964599-f61ba0e24092" alt="Prato 1">
-        <img src="https://images.unsplash.com/photo-1551183053-bf91a1d81141" alt="Prato 2">
-        <img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4" alt="Prato 3">
+      <div class="carousel-container" id="carouselSlides">
+        <img src="https://images.unsplash.com/photo-1600891964599-f61ba0e24092" alt="Prato da casa 1" class="carousel-slide active" />
+        <img src="https://images.unsplash.com/photo-1551183053-bf91a1d81141" alt="Prato da casa 2" class="carousel-slide" />
+        <img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4" alt="Prato da casa 3" class="carousel-slide" />
       </div>
     </section>
- 
-    <section class="form-section" id="reserva">
-      <h2>Reserve sua mesa</h2>
-      <form id="formReserva">
-        <label for="nome">Nome completo:</label>
-        <input type="text" id="nome" required>
 
-        <label for="telefone">Telefone:</label>
-        <input type="tel" id="telefone" required>
-
-        <label for="data">Data:</label>
-        <input type="date" id="data" required>
-
-        <label for="hora">Hora:</label>
-        <input type="time" id="hora" required>
-
-        <label for="pessoas">Número de pessoas:</label>
-        <select id="pessoas" required>
-          <option value="">Selecione</option>
-          <option value="1">1</option>
-          <option value="2">2</option>
-          <option value="3-4">3-4</option>
-          <option value="5+">5 ou mais</option>
-        </select>
-
-  <label for="mesa">Tipo de mesa:</label>
-  <select id="mesa" required>
-    <option value="">Selecione</option>
-    <option value="interna">Interna</option>
-    <option value="externa">Externa</option>
-  </select>
-
-  <label for="ocasiao">Ocasião especial:</label>
-  <input type="text" id="ocasiao" placeholder="Ex: Aniversário, encontro...">
-
-  <label for="preferencia">Preferência alimentar:</label>
-  <select id="preferencia">
-    <option value="">Nenhuma</option>
-    <option value="vegetariano">Vegetariano</option>
-    <option value="vegano">Vegano</option>
-    <option value="sem-gluten">Sem glúten</option>
-    <option value="outra">Outra</option>
-  </select>
-
-  <label for="observacoes">Observações adicionais:</label>
-  <textarea id="observacoes" rows="3" placeholder="Ex: cadeira para criança, alergias..."></textarea>
-
-
-
-
-<label for="Satisfação">Nível de Satisfação:</label>
-<input type="range" id="satisfacao" name="satisfacao" min="0" max="10" step="1">
-
-
-        <button type="submit">Reservar</button>
-      </form>
+    <!-- Seção de Promoções -->
+    <section class="section promo">
+      <h2>Promoções Especiais</h2>
+      <p>Confira nossas ofertas imperdíveis! Não perca!</p>
+      <img src="./img/promo.jpg" alt="Banner de Promoções" class="promo-image" />
     </section>
+
+    <!-- Seção de Aniversário -->
+    <section class="section aniversario">
+      <h2>Faça seu Aniversário aqui!</h2>
+      <p>Comemore com estilo no Sabores da Terra. Oferecemos pacotes especiais para grupos!</p>
+      <img src="./img/niverr.jpg" alt="Banner de Aniversário" class="aniversario-image" />
+    </section>
+
+    <!-- Seção de Delivery -->
+    <section class="section delivery">
+      <h2>Os mais pedidos no Delivery</h2>
+      <p>Delicie-se em casa com nossos pratos mais amados pelos clientes!</p>
+      <img src="./img/alimento.jpg" alt="Prato do Delivery" class="delivery-image" />
+    </section>
+
   </main>
 
+  <!-- Rodapé -->
   <footer>
     <p>&copy; 2025 Sabores da Terra - Todos os direitos reservados.</p>
   </footer>
 
+  <!-- Script do Carrossel -->
   <script>
-    // Carrossel automático
-    const slides = document.getElementById("carouselSlides");
+    const slides = document.querySelectorAll('.carousel-slide');
     let index = 0;
 
     function showNextSlide() {
-      index = (index + 1) % slides.children.length;
-      slides.style.transform = `translateX(-${index * 100}%)`;
+      slides[index].classList.remove('active');
+      index = (index + 1) % slides.length;
+      slides[index].classList.add('active');
     }
 
     setInterval(showNextSlide, 3000);
-
-    // Interação com o formulário
-    document.getElementById("formReserva").addEventListener("submit", function(e) {
-      e.preventDefault();
-      const nome = document.getElementById("nome").value;
-      alert(`Reserva realizada com sucesso, ${nome}!`);
-      this.reset();
-    });
   </script>
 
 </body>
 </html>
+
 

@@ -1,0 +1,111 @@
+/* Geral */
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #fff;
+  background: url('https://images.unsplash.com/photo-1600891964599-f61ba0e24092') no-repeat center center fixed;
+  background-size: cover;
+  padding: 0;
+  margin: 0;
+}
+
+/* Header */
+header {
+  background-color: rgba(62, 39, 35, 0.7);
+  color: #fff;
+  padding: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Logo Responsiva */
+header img {
+  max-width: 150px;
+  height: auto;
+}
+
+/* Navegação */
+nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+nav a {
+  color: #fbe9e7; /* cor clara para contraste */
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 1rem;
+  transition: color 0.3s;
+}
+
+nav a:hover {
+  color: #ffccbc;
+}
+
+/* Formulário de Reserva */
+.form-section {
+  background-color: rgba(0, 0, 0, 0.6);
+  padding: 2rem;
+  border-radius: 10px;
+  width: 50%;
+  margin: 3rem auto;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.form-section h2 {
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+form input,
+form select,
+form textarea {
+  width: 100%;
+  padding: 0.75rem;
+  margin-bottom: 1rem;
+  border: none;
+  border-radius: 5px;
+}
+
+form button {
+  width: 100%;
+  padding: 1rem;
+  background-color: #a1887f;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1.2rem;
+  transition: background-color 0.3s;
+}
+
+form button:hover {
+  background-color: #6d4c41;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  header {
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: center;
+  }
+
+  nav {
+    justify-content: center;
+    width: 100%;
+    margin-top: 1rem;
+  }
+
+  .form-section {
+    width: 90%;
+    padding: 1.5rem;
+  }
+
+  header img {
+    max-width: 120px;
+    margin-bottom: 1rem;
+  }
+}

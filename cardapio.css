@@ -1,21 +1,22 @@
-/* Reset e base */
+/* Reset básico e box-sizing */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
+/* Corpo da página */
 body {
   font-family: 'Arial', sans-serif;
-  background-color: #fffdf5;
+  background-color: #f6e4bc;
   color: #333;
   line-height: 1.6;
 }
 
 /* Cabeçalho */
 header {
-  background-color: #8c4c2f;
-  color: white;
+  background-color: #f6ebd4;
+  color: #3e2723;
   padding: 1rem 2rem;
   display: flex;
   justify-content: space-between;
@@ -28,7 +29,7 @@ header img {
 }
 
 nav a {
-  color: white;
+  color: #3e2723;
   text-decoration: none;
   font-weight: bold;
   margin-left: 1rem;
@@ -39,14 +40,14 @@ nav a:hover {
   color: #ffd5b5;
 }
 
-/* Seção do Cardápio */
+/* Seção principal do cardápio */
 .cardapio-section {
   max-width: 1000px;
   margin: 2rem auto;
   padding: 0 1rem;
 }
 
-/* Categorias */
+/* Títulos das categorias */
 .categoria {
   margin-bottom: 3rem;
 }
@@ -59,15 +60,15 @@ nav a:hover {
   margin-bottom: 1.5rem;
 }
 
-/* Itens */
+/* Estilização dos itens */
 .item {
   display: flex;
-  background-color: #fff3e0;
+  background-color: #d7ac66;
   margin-bottom: 1.5rem;
   border-radius: 8px;
   overflow: hidden;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-  transition: transform 0.2s;
+  transition: transform 0.3s ease;
 }
 
 .item:hover {
@@ -78,6 +79,7 @@ nav a:hover {
   width: 150px;
   height: 100%;
   object-fit: cover;
+  flex-shrink: 0;
 }
 
 .item-info {
@@ -104,14 +106,14 @@ nav a:hover {
 
 /* Rodapé */
 footer {
-  background-color: #8c4c2f;
+  background-color: #3e2723;
   color: white;
   text-align: center;
   padding: 1rem;
   margin-top: 3rem;
 }
 
-/* Responsivo */
+/* Responsividade */
 @media (max-width: 768px) {
   .item {
     flex-direction: column;
@@ -125,4 +127,17 @@ footer {
   .item-info {
     padding: 1rem;
   }
+
+  .categoria h2 {
+    font-size: 1.5rem;
+  }
+
+  .item-info h3 {
+    font-size: 1.1rem;
+  }
+
+  .item-info p {
+    font-size: 0.9rem;
+  }
 }
+
